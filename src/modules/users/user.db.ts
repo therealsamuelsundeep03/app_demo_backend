@@ -23,3 +23,11 @@ export const updateLastLogin = async (id: string) => {
 export const blockUser = async (id: string) => {
   return UserModel.updateOne({ _id: id }, { isBlocked: true });
 };
+
+export const findUserByPhoneWithOTP = async (phone: string) => {
+  return UserModel.findOne({ phone }).select("+otp");
+};
+
+export const clearUserOTP = async (id: string) => {
+  return UserModel.updateOne({ _id: id }, { $unset: { otp: "" } });
+};
