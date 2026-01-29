@@ -28,9 +28,7 @@ export class ProductService {
   }
 
   async getProductByUUID(uuid: any) {
-    console.log(uuid);
     const product = await this.db.findByUUID(uuid);
-    console.log(uuid);
     if (!product) {
       throw new AppError("Product not found", 404);
     }
