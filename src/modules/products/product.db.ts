@@ -11,7 +11,7 @@ export class ProductDB {
   }
 
   findByUUID(uuid: string) {
-    return ProductModel.findOne({ uuid }).lean();
+    return ProductModel.findOne({ _id: uuid }).lean();
   }
 
   findBySlug(slug: string) {

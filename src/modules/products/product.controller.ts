@@ -20,10 +20,10 @@ export class ProductController {
     respond(res, products);
   });
 
-  //   getProductByUUID = asyncHandler(async (req: Request, res: Response) => {
-  //     const product = await this.service.getProductByUUID(req.params.uuid);
-  //     respond(res, product);
-  //   });
+  getProductByUUID = asyncHandler(async (req: Request, res: Response) => {
+    const product = await this.service.getProductByUUID(req.params.uuid);
+    respond(res, product);
+  });
 
   //   getProductBySlug = asyncHandler(async (req: Request, res: Response) => {
   //     const product = await this.service.getProductBySlug(req.params.slug);

@@ -8,6 +8,8 @@ const controller = new ProductController();
  * Public
  */
 router.get("/", controller.getProducts);
+router.get("/:uuid", controller.getProductByUUID);
+
 // router.get("/slug/:slug", controller.getProductBySlug);
 
 /**
