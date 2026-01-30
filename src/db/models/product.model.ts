@@ -11,9 +11,10 @@ const productSchema = new Schema(
     category: { type: String, ref: "Category", required: true },
     images: { type: [String], default: [] },
     isActive: { type: Boolean, default: true },
-    isFeatured: { type: Boolean, default: true },
-    isWishlist: { type: Boolean, default: true },
-    isBestSeller: { type: Boolean, default: true }
+    isFeatured: { type: Boolean, default: false },
+    isWishList: { type: Boolean, default: false },
+    isCart: { type: Boolean, default: false },
+    isBestSeller: { type: Boolean, default: false }
   },
   {
     timestamps: true

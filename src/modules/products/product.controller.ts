@@ -10,23 +10,32 @@ export class ProductController {
     this.service = service ?? new ProductService();
   }
 
-  createProduct = asyncHandler(async (req: Request, res: Response) => {
-    const product = await this.service.createProduct(req.body);
-    respond(res, product, 201);
-  });
-
   getProducts = asyncHandler(async (_req: Request, res: Response) => {
     const products = await this.service.getActiveProducts();
     respond(res, products);
   });
 
-  getProductByUUID = asyncHandler(async (req: Request, res: Response) => {
-    const product = await this.service.getProductByUUID(req.params.uuid);
+  wishList = asyncHandler(async (req: Request, res: Response) => {
+    const { id } = req.params;
+    if (Array.isArray(id)) {
+      throw new Error("Invalid product id");
+    }
+    const product = await this.service.wishList(id);
     respond(res, product);
   });
 
-  //   getProductBySlug = asyncHandler(async (req: Request, res: Response) => {
-  //     const product = await this.service.getProductBySlug(req.params.slug);
-  //     respond(res, product);
-  //   });
+  cart = asyncHandler(async (req: Request, res: Response) => {
+    const { id } = req.params;
+    if (Array.isArray(id)) {
+      throw new Error("Invalid product id");
+    }
+    const product = await this.service.cart(id);
+    respond(res, product);
+  });
+
+  clearCart = asyncHandler(async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const product = await this.service.clearCart();
+    respond(res, product);
+  });
 }

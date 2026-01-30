@@ -1,4 +1,4 @@
-import { UserModel } from "../../infrastructure/db/models/user.model";
+import { UserModel } from "../../db/models/user.model";
 
 export const createUser = async (data: { phone: string }) => {
   return UserModel.create(data);

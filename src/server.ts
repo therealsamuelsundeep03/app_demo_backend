@@ -1,6 +1,6 @@
 import { buildApp } from "./app";
 import { env } from "./env";
-import { connectMongo } from "./infrastructure/db/mongo";
+import { connectMongo } from "./db/mongo";
 
 async function startServer() {
   await connectMongo(); // DB first

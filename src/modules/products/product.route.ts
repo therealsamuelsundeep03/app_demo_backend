@@ -8,16 +8,8 @@ const controller = new ProductController();
  * Public
  */
 router.get("/", controller.getProducts);
-router.get("/:uuid", controller.getProductByUUID);
-
-// router.get("/slug/:slug", controller.getProductBySlug);
-
-/**
- * Admin / Internal
- */
-router.post("/", controller.createProduct);
-// router.get("/uuid/:uuid", controller.getProductByUUID);
-// router.put("/uuid/:uuid", controller.updateProduct);
-// router.delete("/uuid/:uuid", controller.deleteProduct);
+router.put("/wishList/:id", controller.wishList);
+router.put("/cart/:id", controller.cart);
+router.delete("/cart", controller.clearCart);
 
 export default router;

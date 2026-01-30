@@ -54,12 +54,10 @@ router.post("/verify-otp", async (req: Request, res: Response) => {
     if (user.isBlocked) {
       return res.status(403).json({ message: "User is blocked" });
     }
-
-    if (user.otp !== otp) {
+    if (user.otp != otp) {
       return res.status(400).json({ message: "Invalid OTP" });
     }
 
-    // await clearUserOTP(user._id);
     await updateLastLogin(user._id);
 
     res.json({

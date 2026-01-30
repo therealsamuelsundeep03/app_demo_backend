@@ -9,16 +9,9 @@ export interface Product {
   isActive: boolean;
   createdAt: Date;
   updatedAt: Date;
+  isWishlist: boolean;
+  isCart: boolean;
 }
-
-export interface CreateProductDTO {
-  name: string;
-  description?: string;
-  price: number;
-  category: string;
-  images?: string[];
-}
-
 export interface UpdateProductDTO {
   name?: string;
   description?: string;
@@ -26,4 +19,6 @@ export interface UpdateProductDTO {
   category?: string;
   images?: string[];
   isActive?: boolean;
+  isWishList?: boolean;
+  isCart?: boolean;
 }
