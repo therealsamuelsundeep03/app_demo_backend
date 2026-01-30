@@ -12,8 +12,8 @@ export function buildApp() {
   app.use(
     cors({
       origin: ["*"],
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      credentials: true
+      methods: ["GET", "POST", "PUT", "DELETE"]
+      // credentials: true
     })
   );
   app.use(express.json());

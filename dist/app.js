@@ -13,8 +13,8 @@ function buildApp() {
     // core middleware
     app.use((0, cors_1.default)({
         origin: ["*"],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true
+        methods: ["GET", "POST", "PUT", "DELETE"]
+        // credentials: true
     }));
     app.use(express_1.default.json());
     app.use(express_1.default.urlencoded({ extended: true }));
